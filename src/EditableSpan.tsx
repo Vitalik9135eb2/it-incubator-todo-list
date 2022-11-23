@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useState} from "react";
 import {Simulate} from "react-dom/test-utils";
+import {TextField} from "@material-ui/core";
 import input = Simulate.input;
 
 type EditableSpanPropsType = {
@@ -27,11 +28,18 @@ export const  EditableSpan = (props: EditableSpanPropsType) => {
 
     return(
         edit
-            ? <input
+            // ? <input
+            //     value={updateTitle}
+            //     onBlur={onDoubleClickHandler}
+            //     autoFocus
+            //     onChange={onChangeHandler}
+            // />
+
+            ? <TextField
                 value={updateTitle}
-                onBlur={onDoubleClickHandler}
-                autoFocus
-                onChange={onChangeHandler}
+                    onBlur={onDoubleClickHandler}
+                    autoFocus
+                    onChange={onChangeHandler}
             />
             :<span onDoubleClick={onDoubleClickHandler}>{props.title}</span>
     )

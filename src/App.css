@@ -3,8 +3,9 @@
   display: flex;
 }
 
-.App > div {
-  margin-right: 50px;
+.flex{
+  display: flex;
+  justify-content: center;
 }
 
 .error {
