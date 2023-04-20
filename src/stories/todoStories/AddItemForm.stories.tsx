@@ -1,3 +1,4 @@
+import React from "react";
 import {AddItemForm} from "../../AddItemForm";
 import {action} from "@storybook/addon-actions";
 
@@ -10,7 +11,7 @@ const callback = action("Value in input form")
 export const AddItemFormBaseExample = () =>{
 
 
-    return(
+    return  <>
         <AddItemForm addItem={callback}/>
-    )
+    </>
 }
