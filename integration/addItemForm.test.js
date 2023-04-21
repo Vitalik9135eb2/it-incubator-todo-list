@@ -1,7 +1,7 @@
 describe("addItemForm", () =>{
 
     it("base example, visually looks correct", async  () => {
-        await page.goto("")
+        await page.goto("http://localhost:9009/iframe.html?id=additemform--add-item-form-base-example&viewMode=story")
         const image = await page.screenshot()
 
         expect(image).toMatchSnapshot()
