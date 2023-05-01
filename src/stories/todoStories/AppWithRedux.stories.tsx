@@ -19,8 +19,6 @@ export const AppWithReduxBaseExample = () => {
         <>
                 <AppWithRedux/>
 
-
-
         </>
 
 
