@@ -4,9 +4,9 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import {createTheme, CssBaseline, ThemeProvider} from "@material-ui/core";
 import {amber, green} from "@material-ui/core/colors";
-import AppWithRedux from "./AppWithRedux";
 import {Provider} from "react-redux";
 import {store} from "./state/store";
+import App from "./App/App";
 
 const theme = createTheme({
     palette: {
@@ -21,7 +21,7 @@ ReactDOM.render(
 
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            <AppWithRedux/>
+        <App/>
         </ThemeProvider>
     </Provider>
 

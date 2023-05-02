@@ -2,7 +2,7 @@ import React, {useCallback, useReducer} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
-import {AddItemForm} from './AddItemForm';
+import {AddItemForm} from './addItemForm/AddItemForm';
 import {AppBar, Button, Container, IconButton, Toolbar, Typography, Grid, Paper} from "@material-ui/core";
 import {Menu} from '@material-ui/icons';
 import {
