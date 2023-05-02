@@ -30,6 +30,7 @@ const theme = createTheme({
 
 const container = document.getElementById('root')
 
+// @ts-ignore
 const root = createRoot(container)
 
 root.render(<Provider store={store}>
