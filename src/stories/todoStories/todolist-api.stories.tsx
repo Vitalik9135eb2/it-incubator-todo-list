@@ -24,3 +24,35 @@ export const GetTodolist = () =>{
 
     return <div> {JSON.stringify(state)}</div>
 }
+
+
+export const CreateTodolist = () =>{
+
+    const [state, setState] = useState<any>(null)
+
+    useEffect( () => {
+
+        axios.post("https://social-network.samuraijs.com/api/1.1/todo-lists",{title: "dsaasdf"}, settings)
+            .then(response => setState(response.data))
+
+    }, [])
+
+
+    return <div> {JSON.stringify(state)}</div>
+}
+
+
+export const DeleteTodolist = () =>{
+
+    const [state, setState] = useState<any>(null)
+
+    useEffect( () => {
+
+        axios.post("https://social-network.samuraijs.com/api/1.1/todo-lists",{title: "dsaasdf"}, settings)
+            .then(response => setState(response.data))
+
+    }, [])
+
+
+    return <div> {JSON.stringify(state)}</div>
+}
