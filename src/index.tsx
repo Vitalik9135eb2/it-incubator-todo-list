@@ -15,19 +15,6 @@ const theme = createTheme({
         type: "dark"
     }
 })
-
-// ReactDOM.render(
-//     <Provider store={store}>
-//
-//         <ThemeProvider theme={theme}>
-//             <CssBaseline/>
-//             <AppWithRedux/>
-//         </ThemeProvider>
-//     </Provider>
-//
-//
-//     , document.getElementById('root'));
-
 const container = document.getElementById('root')
 
 // @ts-ignore
