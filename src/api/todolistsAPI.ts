@@ -49,7 +49,7 @@ export const todolistsAPI = {
     },
 
     createTodoList(todoListTitle: string){
-        return instance.post<ResponseType<{item: TodoListType}>  >("", {title: todoListTitle})
+        return instance.post<ResponseType<{item: TodoListType}>>("", {title: todoListTitle})
     },
 
     deleteTodoList(id: string){
@@ -60,11 +60,21 @@ export const todolistsAPI = {
         return instance.put<ResponseType>(`/${id}`, {title: updateTitle})
     },
 
+
+
     getTasks(todolistId: string){
         return instance.get<GetTypeTasksResponse>(`/${todolistId}/tasks`)
     },
 
     deleteTask(todoListId:string, taskId:string){
         return instance.delete<ResponseType>(`/${todoListId}/tasks/${taskId}`)
-    }
+    },
+
+    createTask(id: string, title: string){
+        return instance.post<GetTypeTasksResponse>(`/${id}/tasks`, {title: title})
+    },
+
+    updateTask(todoListId:string, taskId:string, title:string){
+        return instance.put<ResponseType>(`/${todoListId}/tasks/${taskId}`, {title: title})
+    },
 }
