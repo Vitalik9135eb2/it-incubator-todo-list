@@ -42,6 +42,15 @@ type GetTypeTasksResponse = {
     totalCount: number
     items: TaskType[]
 }
+
+
+type UpdateTaskModalType ={
+    title: string
+    description: number
+    priority: string
+    startDate:string
+    status:number
+}
 export const todolistsAPI = {
 
     getTodoLists(){
@@ -74,7 +83,7 @@ export const todolistsAPI = {
         return instance.post<GetTypeTasksResponse>(`/${id}/tasks`, {title: title})
     },
 
-    updateTask(todoListId:string, taskId:string, title:string){
-        return instance.put<ResponseType>(`/${todoListId}/tasks/${taskId}`, {title: title})
+    updateTask(todoListId:string, taskId:string, model: UpdateTaskModalType){
+        return instance.put<ResponseType>(`/${todoListId}/tasks/${taskId}`, model)
     },
 }

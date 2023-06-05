@@ -14,11 +14,13 @@ import {TaskType} from "../../Todolist";
 
 
 export type FilterValuesType = "all" | "active" | "completed";
+
 export type TodolistType = {
     id: string
     title: string
     filter: FilterValuesType
 }
+
 export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
@@ -29,8 +31,6 @@ export const useAppWithRedux = () => {
     const  todolists = useSelector<AppRootStateType, Array<TodolistType>>(state => state.todolist)
 
     const  tasks = useSelector<AppRootStateType, TasksStateType>(state => state.task)
-
-
 
     const removeTask = useCallback ((id: string, todolistId: string) => {
 
