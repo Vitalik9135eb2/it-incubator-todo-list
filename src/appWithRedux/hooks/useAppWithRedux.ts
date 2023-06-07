@@ -13,6 +13,7 @@ import {TaskType} from "../../Todolist";
 
 
 
+
 export type FilterValuesType = "all" | "active" | "completed";
 
 export type TodolistType = {
