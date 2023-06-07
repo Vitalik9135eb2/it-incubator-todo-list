@@ -186,7 +186,7 @@ export const UpdateTasks = () => {
         <br/>
         <input placeholder={"Title"} value={title} onChange={(e) => setTitle(e.currentTarget.value)}/>
         <br/>
-        <input placeholder={"Description"} value={description} onChange={(e) => setDescription(e.currentTarget.value)}/>
+        <input placeholder={"Description"} value={description} onChange={(e) => setDescription(+e.currentTarget.value)}/>
         <br/>
         <input placeholder={"Priority"} value={priority} onChange={(e)=>setPriority(e.currentTarget.value)}/>
         <br/>
