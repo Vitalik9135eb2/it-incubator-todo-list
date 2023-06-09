@@ -4,13 +4,14 @@ import {AddItemForm} from './addItemForm/AddItemForm';
 import {EditableSpan} from './EditableSpan';
 import {Checkbox, IconButton, Button} from "@material-ui/core";
 import {Delete} from "@material-ui/icons";
+import {TaskType} from "./api/todolistsAPI";
 
 
-export type TaskType = {
-    id: string
-    title: string
-    isDone: boolean
-}
+// export type TaskType = {
+//     id: string
+//     title: string
+//     isDone: boolean
+// }
 
 type PropsType = {
     id: string

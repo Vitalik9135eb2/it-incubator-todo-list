@@ -1,6 +1,6 @@
-import {FilterValuesType, TasksStateType, TodolistType} from '../App/App';
 import {v1} from 'uuid';
 import {AddTodolistActionType, RemoveTodolistActionType, todolistId1, todolistId2} from './todolists-reducer';
+import {TaskStatuses, TaskType} from "../api/todolistsAPI";
 
 export type RemoveTaskActionType = ReturnType<typeof removeTaskAC>
 export type AddTaskActionType = ReturnType<typeof addTaskAC>
@@ -15,7 +15,7 @@ type ActionsType = RemoveTaskActionType
     | AddTodolistActionType
     | RemoveTodolistActionType
 
-const initialState: TasksStateType = {
+const initialState: TaskType = {
     [todolistId1]: [
         // {id: v1(), title: "HTML&CSS", isDone: true},
         // {id: v1(), title: "JS", isDone: true}
@@ -26,7 +26,7 @@ const initialState: TasksStateType = {
     ]
 };
 
-export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
+export const tasksReducer = (state: TaskType = initialState, action: ActionsType): TaskType => {
     switch (action.type) {
         case 'REMOVE-TASK':
             return {
@@ -37,7 +37,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
         case 'ADD-TASK':
             return {
                 ...state,
-                [action.todolistId]: [{id: v1(), title: action.title, isDone: false}, ...state[action.todolistId]]
+                [action.todolistId]: [{id: v1(), title: action.title, isDone: TaskStatuses.New}, ...state[action.todolistId]]
             }
         case 'CHANGE-TASK-STATUS':
             return {
