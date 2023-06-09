@@ -6,7 +6,7 @@ import {TaskType} from "./Todolist";
 
 type TaskPropsType = {
     removeTask: (taskId: string, todolistId: string) => void
-    changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void
+    changeTaskStatus: (id: string, status: TaskStatuses, todolistId: string) => void
     changeTaskTitle: (taskId: string, newTitle: string, todolistId: string) => void
     task: TaskType
     todolistId: string

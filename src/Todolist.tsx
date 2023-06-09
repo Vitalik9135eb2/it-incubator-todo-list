@@ -4,13 +4,13 @@ import {AddItemForm} from './addItemForm/AddItemForm';
 import {EditableSpan} from './EditableSpan';
 import {Checkbox, IconButton, Button} from "@material-ui/core";
 import {Delete} from "@material-ui/icons";
-import {TaskType} from "./api/todolistsAPI";
+import {TaskStatuses, TaskType} from "./api/todolistsAPI";
 
 
 // export type TaskType = {
 //     id: string
 //     title: string
-//     isDone: boolean
+//     status: TaskStatuses
 // }
 
 type PropsType = {
@@ -20,7 +20,7 @@ type PropsType = {
     removeTask: (taskId: string, todolistId: string) => void
     changeFilter: (value: FilterValuesType, todolistId: string) => void
     addTask: (title: string, todolistId: string) => void
-    changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void
+    changeTaskStatus: (id: string, status: TaskStatuses, todolistId: string) => void
     removeTodolist: (id: string) => void
     changeTodolistTitle: (id: string, newTitle: string) => void
     filter: FilterValuesType
@@ -64,9 +64,9 @@ export function Todolist(props: PropsType) {
                     }
 
 
-                    return <div key={t.id} className={t.isDone ? "is-done" : ""}>
+                    return <div key={t.id} className={t.status ? "is-done" : ""}>
                         <Checkbox
-                            checked={t.isDone}
+                            checked={t.status}
                             color="primary"
                             onChange={onChangeHandler}
                         />
